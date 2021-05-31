@@ -1,0 +1,83 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.productive {
+  padding: 13.5rem 2.2rem;
+
+  .productive-flex {
+    @extend .container;
+
+    @include m.respond-to(tab) {
+      display: flex;
+      align-items: center;
+      gap: 5.5rem;
+    }
+  }
+
+  &__image {
+    max-width: 61.8rem;
+    max-height: 47rem;
+    margin-bottom: 4.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include m.respond-to(tab) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    max-width: 34.5rem;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+    color: $color-white;
+    margin-bottom: 2.2rem;
+    text-align: left;
+
+    @include m.respond-to(desktop) {
+      font-size: 4rem;
+    }
+  }
+
+  &__paragraph {
+    max-width: 55.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: $color-white;
+    margin-bottom: 2rem;
+
+    &:nth-of-type(1) {
+      margin-bottom: 2.5rem;
+    }
+
+    @include m.respond-to(tab) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__cta {
+    max-width: 15rem;
+    color: $color-cyan;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.8rem;
+    border-bottom: 0.1rem solid $color-cyan;
+    transition: $transitionAll;
+
+    @include m.respond-to(tab) {
+      max-width: 16.8rem;
+      font-size: 1.6rem;
+    }
+
+    &:hover {
+      color: $color-white;
+      border-bottom-color: $color-white;
+    }
+  }
+}

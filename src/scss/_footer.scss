@@ -1,0 +1,97 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.footer {
+  padding: 23rem 2.2rem 3.5rem 2.2rem;
+  background-color: $footer-background;
+  color: $color-cyan;
+
+  &__logo {
+    @extend .logo;
+    display: inline-block;
+    margin-bottom: 3.5rem;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2.5rem;
+
+    @include m.respond-to(tab) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to(lDesktop) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  span {
+    max-width: 32rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+    @include m.respond-to(lDesktop) {
+      width: 32rem;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 3.5rem;
+
+    @include m.respond-to(lDesktop) {
+      margin-left: 3rem;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 1.5rem;
+  }
+
+  &__nav-link {
+    color: $color-cyan;
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+      color: $color-white;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &__social-icons {
+    text-align: center;
+
+    li {
+      width: 3.5rem;
+      height: 3.5rem;
+      background-color: transparent;
+      border: 0.1rem solid $color-cyan;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      &:hover {
+        i {
+          color: $color-cyan;
+        }
+      }
+    }
+  }
+
+  &__social-icons {
+    justify-self: center;
+    font-size: 1.7rem;
+    display: flex;
+    gap: 1rem;
+
+    i {
+      color: $color-white;
+    }
+
+    @include m.respond-to(tab) {
+      justify-self: flex-start;
+    }
+  }
+}

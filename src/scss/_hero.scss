@@ -1,0 +1,84 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.hero {
+  padding: 2rem 3rem 11.3rem 3rem;
+  position: relative;
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 60vw;
+    left: 0;
+    bottom: -0.2rem;
+    background-image: url("./../images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+
+    @include m.respond-to(tab) {
+      background-image: url("./../images/bg-curvy-desktop.svg");
+      height: 40vw;
+    }
+  }
+
+  @include m.respond-to(tab) {
+    padding-bottom: 16.5rem;
+  }
+
+  &__image {
+    max-width: 72.5rem;
+    max-height: 53.5rem;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 68rem;
+    margin: 3.2rem 0 1.8rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $color-white;
+
+    @include m.respond-to(tab) {
+      font-size: 4rem;
+    }
+  }
+
+  &__paragraph {
+    max-width: 58.8rem;
+    text-align: center;
+    color: $color-cyan;
+    margin-bottom: 4rem;
+
+    @include m.respond-to(tab) {
+      font-size: 2rem;
+    }
+  }
+
+  &__button {
+    @extend .button;
+    padding: 1.6rem 7.2rem;
+
+    @include m.respond-to(tab) {
+      padding: 2rem 9.8rem;
+    }
+  }
+}

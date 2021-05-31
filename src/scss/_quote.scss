@@ -1,0 +1,90 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.quote {
+  color: $color-cyan;
+  padding: 0 4rem 30rem 4rem;
+
+  &__grid {
+    max-width: 116rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto, fr);
+    grid-gap: 3rem;
+    position: relative;
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:first-child:before {
+      content: url("./../images/bg-quotes.png");
+      position: absolute;
+      top: -3rem;
+      left: 0;
+      width: 2.2rem;
+      height: 2rem;
+      transform: scale(0.8);
+      z-index: 0;
+
+      @include m.respond-to(tab) {
+        width: 5.5rem;
+        height: 5.2rem;
+        left: -2rem;
+      }
+    }
+
+    @include m.respond-to(tab) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__content {
+    padding: 2.5rem 3rem 2.5rem 1.8rem;
+    background-color: $testimonials-background;
+    border-radius: 0.5rem;
+    max-width: 50rem;
+    box-shadow: 1rem 0.5rem rgba($testimonials-background, 0.1);
+  }
+
+  &__main {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  &__author {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__author-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+  }
+
+  &__author-name {
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    color: $color-white;
+  }
+
+  &__author-job {
+    font-size: 1.1rem;
+  }
+}

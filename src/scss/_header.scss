@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.intro {
+  width: 100%;
+  background-color: $secondary-background;
+}
+
+.header {
+  @extend .container;
+  padding: 2rem 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include m.respond-to(tab) {
+    padding: 4rem 6rem;
+  }
+
+  @include m.respond-to(desktop) {
+    padding: 7.8rem 7.2rem;
+  }
+
+  &__logo {
+    @extend .logo;
+    display: inline-flex;
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    font-size: 1.5rem;
+    font-weight: $fw-regular;
+    color: $color-cyan;
+    transition: $transitionAll;
+
+    &:not(nth:nth-of-type(1)) {
+      margin-left: 2.2rem;
+
+      @include m.respond-to(tab) {
+        margin-left: 5.7rem;
+      }
+    }
+
+    &:hover {
+      color: $color-white;
+      text-decoration: underline;
+      text-decoration-color: $color-cyan;
+    }
+
+    @include m.respond-to(tab) {
+      font-size: 1.8rem;
+    }
+  }
+}

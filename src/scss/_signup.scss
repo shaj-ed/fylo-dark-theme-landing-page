@@ -1,0 +1,82 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+
+.signup {
+  position: absolute;
+  padding: 0 2rem 0 2rem;
+  width: 100%;
+  background: transparent;
+  transform: translateY(-19rem);
+
+  @include m.respond-to(tab) {
+    transform: translateY(-15rem);
+  }
+
+  &__container {
+    padding: 4rem 2.8rem;
+    max-width: 86rem;
+    margin: 0 auto;
+    background-color: $secondary-background;
+    color: $color-white;
+    border-radius: 0.5rem;
+    box-shadow: 1rem 0.5rem rgba($testimonials-background, 0.1);
+
+    @include m.respond-to(tab) {
+      padding: 5.5rem 2.5rem;
+    }
+
+    @include m.respond-to(desktop) {
+      padding: 5.5rem 7.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: $fw-bold;
+
+    @include m.respond-to(tab) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__paragraph {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+
+    @include m.respond-to(tab) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1.8rem 2.5rem;
+    border-radius: 4rem;
+    border: none;
+    outline: none;
+    font-family: inherit;
+
+    @include m.respond-to(tab) {
+      flex: 2;
+    }
+  }
+
+  &__button {
+    @extend .button;
+    width: 100%;
+    padding: 1.6rem 3.2rem;
+
+    @include m.respond-to(tab) {
+      flex: 1;
+    }
+  }
+}

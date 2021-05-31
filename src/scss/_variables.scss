@@ -1,0 +1,29 @@
+// Colors //
+
+// Primary
+$primary-background: hsl(218, 28%, 13%);
+$secondary-background: hsl(217, 28%, 15%);
+$footer-background: hsl(216, 53%, 9%);
+$testimonials-background: hsl(219, 30%, 18%);
+
+// Accent
+$color-cyan: hsl(176, 68%, 64%);
+$color-blue: hsl(198, 60%, 50%);
+$color-light-red: hsl(0, 100%, 63%);
+
+$color-white: hsl(0, 0%, 100%);
+
+// Typography //
+
+// Font Body
+$font-body: "Open Sans", sans-serif;
+// Headings, Call-to-actions, Header Navigation
+$font-extra: "Raleway", sans-serif;
+// Font Size
+$body-copy-fz: 14px;
+// Font weights
+$fw-regular: 400;
+$fw-bold: 700;
+
+// Transition
+$transitionAll: all 0.2s ease-in-out;

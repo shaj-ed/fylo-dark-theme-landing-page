@@ -1,0 +1,49 @@
+// Variables
+@use 'variables' as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  font-family: $font-body;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  font-family: $font-extra;
+  text-align: center;
+}
+
+a {
+  font-family: $font-extra;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.main {
+  background-color: $primary-background;
+}
+
+.flex-a-center {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
